@@ -1,0 +1,28 @@
+{
+  "name": "playwright-demoqa-test",
+  "version": "1.0.0",
+  "description": "Playwright test for demoqa.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "playwright": "^1.12.2"
+  },
+  "devDependencies": {
+    "playwright": "^1.12.2"
+  },
+  "playwright": {
+    "projects": [
+      {
+        "name": "chrome",
+        "use": { "channel": "chrome" }
+      },
+      {
+        "name": "firefox",
+        "use": { "channel": "firefox" }
+      }
+    ]
+  }
+}
+
