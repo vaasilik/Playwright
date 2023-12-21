@@ -4,25 +4,13 @@
   "description": "Playwright test for demoqa.com",
   "main": "index.js",
   "scripts": {
+    "pw:headed": "npx playwright test --headed", 
+    "pw:report": "npx playwright show-report",
+    "pw:ui": "npx playwright test --ui",
     "test": "playwright test"
   },
-  "dependencies": {
-    "playwright": "^1.12.2"
-  },
   "devDependencies": {
-    "playwright": "^1.12.2"
-  },
-  "playwright": {
-    "projects": [
-      {
-        "name": "chrome",
-        "use": { "channel": "chrome" }
-      },
-      {
-        "name": "firefox",
-        "use": { "channel": "firefox" }
-      }
-    ]
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.5"
   }
 }
-
