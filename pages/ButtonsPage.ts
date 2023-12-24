@@ -1,10 +1,16 @@
-import { Page } from 'playwright';
+import { Page, Locator } from 'playwright';
 
 export class ButtonsPage {
   private page: Page;
+  private clickMeMessage: Locator;
+  private doubleClickMessage: Locator;
+  private rightClickMessage: Locator;
 
   constructor(page: Page) {
     this.page = page;
+    this.clickMeMessage = this.page.locator(`#dynamicClickMessage`);
+    this.doubleClickMessage = this.page.locator(`#doubleClickMessage`);
+    this.rightClickMessage = this.page.locator(`#rightClickMessage`);
   }
 
   async goToButtonsPage() {
@@ -13,8 +19,7 @@ export class ButtonsPage {
 
   async isClickMeMessageVisible(expectedMessage: string) {
     await this.page.waitForSelector(`#dynamicClickMessage:has-text("${expectedMessage}")`);
-    const locator = this.page.locator(`#dynamicClickMessage:has-text("${expectedMessage}")`);
-    return await locator.isVisible();
+    return this.clickMeMessage.isVisible();
   }
 
   async doubleClickPage(buttonText: string) {
@@ -24,8 +29,7 @@ export class ButtonsPage {
 
   async isDoubleClickMessageVisible(expectedMessage: string) {
     await this.page.waitForSelector(`#doubleClickMessage:has-text("${expectedMessage}")`);
-    const locator = this.page.locator(`#doubleClickMessage:has-text("${expectedMessage}")`);
-    return await locator.isVisible();
+    return this.doubleClickMessage.isVisible();
   }
 
   async rightClickPage(buttonText: string) {
@@ -35,7 +39,6 @@ export class ButtonsPage {
 
   async isRightClickMessageVisible(expectedMessage: string) {
     await this.page.waitForSelector(`#rightClickMessage:has-text("${expectedMessage}")`);
-    const locator = this.page.locator(`#rightClickMessage:has-text("${expectedMessage}")`);
-    return await locator.isVisible();
+    return this.rightClickMessage.isVisible();
   }
 }
