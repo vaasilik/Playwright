@@ -1,4 +1,7 @@
 import { defineConfig, devices } from 'playwright/test';
+import { config } from './config/config';
+// import dotenv from 'dotenv';
+// dotenv.config();
 
 /**
  * Read environment variables from file.
@@ -28,7 +31,8 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://demoqa.com', 
+    // baseURL: 'https://demoqa.com', 
+    baseURL: config.baseUrl, 
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
