@@ -8,7 +8,7 @@ test('Right click on button and verify message', async ({ page }) => {
   const buttonText = 'Right Click Me';
   const expectedMessage = 'You have done a right click';
 
-  await rightClickPage.rightClickPage(buttonText);
+  await rightClickPage.rightClickButton(buttonText);
   
   const isMessageVisible = await rightClickPage.isRightClickMessageVisible(expectedMessage);
   expect(isMessageVisible).toBeTruthy();
