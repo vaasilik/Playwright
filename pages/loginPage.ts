@@ -24,9 +24,15 @@ export class LoginPage {
   async clickLoginButton() {
     await this.loginButton.click();
   }
-  
+
   async clickLoginButtonWithNavigation() {
     await this.loginButton.click();
     await this.page.waitForNavigation();
+  }
+
+  async login(userName: string, password: string) {
+    await this.enterUserName(userName);
+    await this.enterPassword(password);
+    await this.clickLoginButtonWithNavigation();
   }
 }

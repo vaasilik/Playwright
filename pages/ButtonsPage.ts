@@ -22,7 +22,7 @@ export class ButtonsPage {
     return this.clickMeMessage.isVisible();
   }
 
-  async doubleClickPage(buttonText: string) {
+  async doubleClickButton(buttonText: string) {
     const button = await this.page.locator(`button:has-text("${buttonText}")`);
     await button.dblclick();
   }
@@ -32,7 +32,7 @@ export class ButtonsPage {
     return this.doubleClickMessage.isVisible();
   }
 
-  async rightClickPage(buttonText: string) {
+  async rightClickButton(buttonText: string) {
     const button = await this.page.locator(`button:has-text("${buttonText}")`);
     await button.click({ button: 'right' });
   }
