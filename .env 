@@ -1,3 +1,4 @@
-BASE_URL=
+BASEURL=https://demoqa.com
+APIURL=https://demoqa.com
 USERNAME=
 PASSWORD=
