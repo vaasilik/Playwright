@@ -8,7 +8,7 @@ test('Double click on button and verify message', async ({ page }) => {
   const buttonText = 'Double Click Me';
   const expectedMessage = 'You have done a double click';
 
-  await doubleClickPage.doubleClickPage(buttonText);
+  await doubleClickPage.doubleClickButton(buttonText);
   const isMessageVisible = await doubleClickPage.isDoubleClickMessageVisible(expectedMessage);
 
   expect(isMessageVisible).toBeTruthy();
